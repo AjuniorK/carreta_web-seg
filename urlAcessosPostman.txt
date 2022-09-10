@@ -1,0 +1,13 @@
+localhost:8080/public/exemplo/autenticacao
+
+KEY: login - cleverson
+     senha - abc
+
+localhost:8080/usuario
+localhost:8080/carreta
+
+KEY: Authorization - Bearer (TOKEN localhost:8080/public/exemplo/autenticacao)
+
+
+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
+
