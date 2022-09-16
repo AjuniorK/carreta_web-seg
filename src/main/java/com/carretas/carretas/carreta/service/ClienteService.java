@@ -17,6 +17,10 @@ public class ClienteService {
         clienteRepository.save(usuario);
     }
 
+    public void setClienteRepository(String cpf, String nome, String email, Integer id) {
+        clienteRepository.setClienteInfoById(cpf, nome, email, id);
+    }
+
     public List<Cliente> listar() {
         return clienteRepository.findAll();
     }

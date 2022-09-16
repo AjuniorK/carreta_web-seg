@@ -17,6 +17,11 @@ public class CarretaService {
         carretaRepository.save(usuario);
     }
 
+    public void setCarretaInfoById(String placa, String tipo, String volume, Integer id) {
+        carretaRepository.setCarretaInfoById(placa, tipo, volume, id);
+    }
+
+
     public List<Carreta> listar() {
         return carretaRepository.findAll();
     }
