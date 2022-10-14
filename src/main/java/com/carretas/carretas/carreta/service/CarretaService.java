@@ -13,8 +13,8 @@ public class CarretaService {
     @Autowired
     private CarretaRepository carretaRepository;
 
-    public void salvar(Carreta usuario) {
-        carretaRepository.save(usuario);
+    public void salvar(Carreta carreta) {
+        carretaRepository.save(carreta);
     }
 
     public void setCarretaInfoById(String placa, String tipo, String volume, Integer id) {

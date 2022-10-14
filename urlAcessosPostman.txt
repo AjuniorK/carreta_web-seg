@@ -11,3 +11,8 @@ KEY: Authorization - Bearer (TOKEN localhost:8080/public/exemplo/autenticacao)
 
 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
 
+
+localhost:8081/sistema-carretas/public/exemplo/autenticacao
+
+localhost:8081/sistema-carretas/carreta
+

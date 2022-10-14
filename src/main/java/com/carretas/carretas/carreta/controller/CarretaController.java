@@ -5,6 +5,7 @@ import com.carretas.carretas.carreta.service.CarretaService;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @RestController
 @RequestMapping("/carreta")
@@ -25,6 +28,9 @@ public class CarretaController {
     @Autowired
     CarretaService carretaService;
 
+    @Value("${application.name}")
+    private String applicationName;
+
     @PostMapping
     public void salvar(@RequestBody Carreta carreta) {
         carretaService.salvar(carreta);
@@ -33,6 +39,11 @@ public class CarretaController {
     @GetMapping
     public List<Carreta> listar() {
         return carretaService.listar();
+    }
+
+    @GetMapping("/hello")
+    public String helloWorld(){
+        return applicationName;
     }
 
 //    @GetMapping("/{id}")
