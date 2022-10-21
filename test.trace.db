@@ -243,3 +243,6 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/User/De
 	at org.h2.mvstore.FileStore.open(FileStore.java:128)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:452)
 	... 52 more
+2022-10-17 01:00:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * [*]FROPEDIDO M PRODUTO PEDIDO"; SQL statement:
+SELECT * FROPEDIDO M PRODUTO PEDIDO [42000-214]

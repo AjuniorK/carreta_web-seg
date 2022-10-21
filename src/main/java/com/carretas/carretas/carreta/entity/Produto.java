@@ -12,11 +12,11 @@ public class Produto {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "descricao")
+    @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    @Column(name = "preco_unitario")
-    private BigDecimal preco;
+    @Column(name = "preco_unitario", nullable = false)
+    private Float preco;
 
     public Integer getId() {
         return id;
@@ -34,11 +34,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public BigDecimal getPreco() {
+    public Float getPreco() {
         return preco;
     }
 
-    public void setPreco(BigDecimal preco) {
+    public void setPreco(Float preco) {
         this.preco = preco;
     }
 }

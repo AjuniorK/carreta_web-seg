@@ -86,48 +86,48 @@ public class ClientesController {
         return clientes.findAll(example);
     }
 
-    @Autowired
-    ClientesService clienteService;
+//    @Autowired
+//    ClientesService clienteService;
+//
+//    @PostMapping
+//    public void salvar(@RequestBody Cliente cliente) {
+//        clienteService.salvar(cliente);
+//    }
 
-    @PostMapping
-    public void salvar(@RequestBody Cliente cliente) {
-        clienteService.salvar(cliente);
-    }
+//    @PutMapping("/{id}")
+//    public void update(@RequestBody Cliente cliente, @PathVariable Integer id) {
+//        System.out.println(id);
+//        System.out.println(cliente.getCpf());
+//        System.out.println(cliente.getNome());
+//        System.out.println(cliente.getEmail());
+//        clienteService.atualizar(cliente);
+//
+//    }
 
-    @PutMapping("/{id}")
-    public void update(@RequestBody Cliente cliente, @PathVariable Integer id) {
-        System.out.println(id);
-        System.out.println(cliente.getCpf());
-        System.out.println(cliente.getNome());
-        System.out.println(cliente.getEmail());
-        clienteService.atualizar(cliente);
-
-    }
-
-    @GetMapping
-    public List<Cliente> listar() {
-        return clienteService.obterTodos();
-    }
-
-
-    @DeleteMapping("/{id}")
-    public void excluir(@PathVariable("id") Integer id) {
-        clienteService.excluir(id);
-    }
-
-    @DeleteMapping("/deletenome/{nome}")
-    public void excluirNome(@PathVariable("nome") String nome) {
-        clienteService.deletarByNome(nome);
-    }
-
-    @GetMapping("/{nome}")
-    public ResponseEntity<List<Cliente>> buscarPorNome(@PathVariable("nome") String nome) {
-        try {
-            List<Cliente> clientes = clienteService.buscarPorNome(nome);
-            return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
-        } catch (NoSuchElementException ex) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-        }
-    }
+//    @GetMapping
+//    public List<Cliente> listar() {
+//        return clienteService.obterTodos();
+//    }
+//
+//
+//    @DeleteMapping("/{id}")
+//    public void excluir(@PathVariable("id") Integer id) {
+//        clienteService.excluir(id);
+//    }
+//
+//    @DeleteMapping("/deletenome/{nome}")
+//    public void excluirNome(@PathVariable("nome") String nome) {
+//        clienteService.deletarByNome(nome);
+//    }
+//
+//    @GetMapping("/{nome}")
+//    public ResponseEntity<List<Cliente>> buscarPorNome(@PathVariable("nome") String nome) {
+//        try {
+//            List<Cliente> clientes = clienteService.buscarPorNome(nome);
+//            return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
+//        } catch (NoSuchElementException ex) {
+//            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+//        }
+//    }
 
 }

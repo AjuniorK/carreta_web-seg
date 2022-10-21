@@ -1,7 +1,6 @@
 package com.carretas.carretas.carreta.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class Pedido {
     private LocalDate dataPedido;
 
     @Column(name = "total", precision = 20, scale = 2)
-    private BigDecimal total;
+    private float total;
 
     @OneToMany(mappedBy = "pedido")
     private List<itemPedido> itens;
@@ -59,11 +58,11 @@ public class Pedido {
         this.dataPedido = dataPedido;
     }
 
-    public BigDecimal getTotal() {
+    public float getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(float total) {
         this.total = total;
     }
 

@@ -1,6 +1,9 @@
 package com.carretas.carretas.carreta.controller;
+
 import com.carretas.carretas.carreta.entity.Produto;
 import com.carretas.carretas.carreta.repository.Produtos;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -9,10 +12,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.*;
-
 @RestController
 @RequestMapping("/api/produtos")
+@SecurityScheme(
+        name = "Bearer",
+        type = SecuritySchemeType.HTTP,
+        scheme = "bearer"
+)
 public class ProdutoController {
 
     private Produtos repository;
@@ -22,13 +28,13 @@ public class ProdutoController {
     }
 
     @PostMapping
-    @ResponseStatus(CREATED)
-    public Produto save(@RequestBody Produto produto ){
+    @ResponseStatus(HttpStatus.CREATED)
+    public Produto save( @RequestBody Produto produto ){
         return repository.save(produto);
     }
 
     @PutMapping("{id}")
-    @ResponseStatus(NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update( @PathVariable Integer id, @RequestBody Produto produto ){
         repository
                 .findById(id)
@@ -42,7 +48,7 @@ public class ProdutoController {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Integer id){
         repository
                 .findById(id)
