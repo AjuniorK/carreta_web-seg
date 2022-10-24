@@ -16,3 +16,20 @@ localhost:8081/sistema-carretas/public/exemplo/autenticacao
 
 localhost:8081/sistema-carretas/carreta
 
+
+Exemplo Pedido Cliente:
+
+{
+    "cliente": 1,
+    "items":[ {
+        
+            "produto": 2,
+            "quantidade": 1
+    },
+    {
+         "produto": 3,
+         "quantidade": 2
+    }
+    ]
+        
+

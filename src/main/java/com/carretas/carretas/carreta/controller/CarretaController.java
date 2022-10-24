@@ -28,9 +28,6 @@ public class CarretaController {
     @Autowired
     CarretaService carretaService;
 
-    @Value("${application.name}")
-    private String applicationName;
-
     @PostMapping
     public void salvar(@RequestBody Carreta carreta) {
         carretaService.salvar(carreta);
@@ -39,11 +36,6 @@ public class CarretaController {
     @GetMapping
     public List<Carreta> listar() {
         return carretaService.listar();
-    }
-
-    @GetMapping("/hello")
-    public String helloWorld(){
-        return applicationName;
     }
 
 //    @GetMapping("/{id}")

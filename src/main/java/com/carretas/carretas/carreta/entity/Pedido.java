@@ -1,6 +1,9 @@
 package com.carretas.carretas.carreta.entity;
 
+import com.carretas.carretas.carreta.enums.StatusPedido;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,6 +25,10 @@ public class Pedido {
 
     @Column(name = "total", precision = 20, scale = 2)
     private float total;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private StatusPedido status;
 
     @OneToMany(mappedBy = "pedido")
     private List<itemPedido> itens;
@@ -58,12 +65,20 @@ public class Pedido {
         this.dataPedido = dataPedido;
     }
 
-    public float getTotal() {
+    public Float getTotal() {
         return total;
     }
 
     public void setTotal(float total) {
         this.total = total;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
     }
 
     @Override
