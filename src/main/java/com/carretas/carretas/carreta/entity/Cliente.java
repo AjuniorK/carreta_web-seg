@@ -1,5 +1,9 @@
 package com.carretas.carretas.carreta.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -27,6 +31,7 @@ public class Cliente {
     public Cliente() {
     }
 
+    @JsonManagedReference
     public Set<Pedido> getPedidos() {
         return pedidos;
     }

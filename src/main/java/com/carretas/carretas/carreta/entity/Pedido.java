@@ -1,6 +1,8 @@
 package com.carretas.carretas.carreta.entity;
 
 import com.carretas.carretas.carreta.enums.StatusPedido;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -33,6 +35,7 @@ public class Pedido {
     @OneToMany(mappedBy = "pedido")
     private List<itemPedido> itens;
 
+    @JsonManagedReference
     public List<itemPedido> getItens() {
         return itens;
     }
@@ -49,6 +52,7 @@ public class Pedido {
         this.id = id;
     }
 
+    @JsonBackReference
     public Cliente getCliente() {
         return cliente;
     }

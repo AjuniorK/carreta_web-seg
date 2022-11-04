@@ -14,11 +14,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/produtos")
-@SecurityScheme(
-        name = "Bearer",
-        type = SecuritySchemeType.HTTP,
-        scheme = "bearer"
-)
+//@SecurityScheme(
+//        name = "Bearer",
+//        type = SecuritySchemeType.HTTP,
+//        scheme = "bearer"
+//)
 public class ProdutoController {
 
     private Produtos repository;

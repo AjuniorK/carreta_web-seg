@@ -1,5 +1,8 @@
 package com.carretas.carretas.carreta.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -30,6 +33,7 @@ public class itemPedido {
         this.id = id;
     }
 
+    @JsonBackReference
     public Pedido getPedido() {
         return pedido;
     }
@@ -38,6 +42,7 @@ public class itemPedido {
         this.pedido = pedido;
     }
 
+    @JsonManagedReference
     public Produto getProduto() {
         return produto;
     }

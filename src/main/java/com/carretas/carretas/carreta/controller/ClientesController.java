@@ -17,12 +17,12 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/clientes")
-@SecurityScheme(
-        name = "Bearer",
-        type = SecuritySchemeType.HTTP,
-        scheme = "bearer"
-)
+@RequestMapping("/api/clientes")
+//@SecurityScheme(
+//        name = "Bearer",
+//        type = SecuritySchemeType.HTTP,
+//        scheme = "bearer"
+//)
 public class ClientesController {
 
 
@@ -34,11 +34,12 @@ public class ClientesController {
 
     @GetMapping("{id}")
     public Cliente getClienteById( @PathVariable Integer id ){
-        return clientes
+        Cliente c = clientes
                 .findById(id)
                 .orElseThrow(() ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND,
                                 "Cliente não encontrado"));
+        return c;
     }
 
     @PostMapping
