@@ -42,7 +42,7 @@ public class itemPedido {
         this.pedido = pedido;
     }
 
-    @JsonManagedReference
+    //@JsonManagedReference
     public Produto getProduto() {
         return produto;
     }

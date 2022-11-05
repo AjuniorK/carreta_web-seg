@@ -33,3 +33,54 @@ Exemplo Pedido Cliente:
     ]
         
 
+
+POST localhost:8081/api/usuarios
+
+{
+    "nome": "Amauri",
+    "login": "amauri",
+    "senha": "amauri123"
+}
+
+POST localhost:8081/api/usuarios/auth
+
+{
+    "nome": "Amauri",
+    "login": "amauri",
+    "senha": "amauri123"
+}
+
+GET localhost:8081/api/clientes
+
+POST localhost:8081/api/clientes
+
+{
+    "cpf": "888888888",
+    "nome": "Jose de Tal",
+    "email": "jos@email.com",
+    "pedidos": []
+}
+
+POST localhost:8081/api/produtos
+
+{
+    "descricao": "Engate Jeep Regenegade",
+    "preco": 123.45
+}
+
+GET localhost:8081/api/produtos
+
+POST localhost:8081/api/pedidos
+
+{
+    "cliente": 67,
+    "items": [
+        {
+            "produto": 68,
+            "quantidade": 3
+        }
+    ]
+}
+
+GET localhost:8081/api/pedidos/69
+

@@ -69,6 +69,11 @@ public class ProdutoController {
                                 "Produto não encontrado."));
     }
 
+    @GetMapping("topProduct")
+    public List<Produto> getTopProduct(){
+        return repository.topProduct();
+    }
+
     @GetMapping
     public List<Produto> find(Produto filtro ){
         ExampleMatcher matcher = ExampleMatcher
